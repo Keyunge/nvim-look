@@ -44,7 +44,7 @@ require('lazy').setup({
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
-    'neovim/nvim-lspconfig',
+    {'neovim/nvim-lspconfig',
     dependencies = {
         { 'mason-org/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
         'mason-org/mason-lspconfig.nvim',
@@ -188,7 +188,7 @@ require('lazy').setup({
             vim.lsp.enable(server)
         end
     end,
-
+		},
     {
         'nvim-telescope/telescope.nvim',
         event = 'VimEnter',
@@ -353,7 +353,8 @@ require('lazy').setup({
     legacy_computing_symbols_support = false,
     smear_insert_mode = true,
   },
-}
+},
+		{ 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 })
 
 require("gruvbox").setup({
@@ -438,4 +439,5 @@ require('lualine').setup {
     tabline = {},
     extensions = {},
 }
+
 
